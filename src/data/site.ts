@@ -4,6 +4,7 @@ export interface NavItem {
 }
 
 export interface SocialLink {
+  readonly id: "linkedin" | "github" | "email";
   readonly label: string;
   readonly href: string;
   readonly external: boolean;
@@ -46,19 +47,22 @@ export function getSocialLinks(): readonly SocialLink[] {
 
   return [
     {
+      id: "linkedin",
       label: "LinkedIn",
-      href: linkedin ?? "/contato",
-      external: Boolean(linkedin),
+      href: linkedin ?? "https://www.linkedin.com/in/artur-ferreira-silva-181105358/",
+      external: true,
     },
     {
+      id: "github",
       label: "GitHub",
-      href: github ?? "/contato",
-      external: Boolean(github),
+      href: github ?? "https://github.com/artur-fsilva",
+      external: true,
     },
     {
+      id: "email",
       label: "E-mail",
-      href: mailto ?? "/contato",
-      external: Boolean(mailto),
+      href: mailto ?? "mailto:arturfer2006@hotmail.com",
+      external: false,
     },
   ];
 }

@@ -26,7 +26,9 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
-function getMetadataBase(): URL | undefined {
+const PRODUCTION_SITE_URL = "https://arturferreira.vercel.app";
+
+function getMetadataBase(): URL {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (configured && configured.startsWith("https://")) {
     return new URL(configured);
@@ -37,24 +39,30 @@ function getMetadataBase(): URL | undefined {
     return new URL(`https://${vercelUrl.replace(/^https?:\/\//, "")}`);
   }
 
-  return undefined;
+  return new URL(PRODUCTION_SITE_URL);
 }
+
+const OG_DESCRIPTION = "Desenvolvedor de Sistemas | Projetos, aplicações web e soluções digitais.";
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: `${PRODUCTION_SITE_URL}/`,
     title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
+    description: OG_DESCRIPTION,
     siteName: SITE_CONFIG.ownerName,
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_CONFIG.title,
-    description: SITE_CONFIG.description,
+    description: OG_DESCRIPTION,
   },
 };
 

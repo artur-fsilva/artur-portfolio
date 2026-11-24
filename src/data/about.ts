@@ -80,6 +80,7 @@ export const ABOUT_EDUCATION = {
   institution: "PUC Minas",
   course: "Sistemas de Informação",
   status: "Graduação em andamento",
+  expectedGraduation: "Previsão de conclusão: 2028",
 } as const;
 
 export const ABOUT_DIRECTION = {

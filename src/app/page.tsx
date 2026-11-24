@@ -6,7 +6,44 @@ import { Container } from "@/components/layout/Container";
 import { ArrowUpRightIcon, PlusIcon } from "@/components/ui/Icons";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { HOME_CONTACT_CTA, HOME_HERO, HOME_PROJECTS, HOME_TRAJECTORY } from "@/data/home";
-import { getSocialLinks } from "@/data/site";
+import { getSocialLinks, type SocialLink } from "@/data/site";
+
+function SocialPlatformIcon({ id }: { id: SocialLink["id"] }) {
+  switch (id) {
+    case "linkedin":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-3.5 w-3.5">
+          <path d="M4.5 3A1.5 1.5 0 0 0 3 4.5v15A1.5 1.5 0 0 0 4.5 21h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 19.5 3h-15ZM8.25 9.75v7.5H6v-7.5h2.25Zm-1.12-1.1a1.32 1.32 0 1 1 0-2.64 1.32 1.32 0 0 1 0 2.64Zm10.87 8.6h-2.25v-3.7c0-.88-.02-2.01-1.23-2.01-1.23 0-1.42.96-1.42 1.95v3.76H10.85v-7.5H13v1.03h.03c.3-.57 1.03-1.17 2.13-1.17 2.28 0 2.84 1.5 2.84 3.45v4.19Z" />
+        </svg>
+      );
+    case "github":
+      return (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-3.5 w-3.5">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.34 9.34 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.64 1.03 2.76 0 3.95-2.34 4.82-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"
+          />
+        </svg>
+      );
+    case "email":
+      return (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          className="h-3.5 w-3.5"
+        >
+          <rect x="3" y="5" width="18" height="14" rx="1.5" />
+          <path d="M4 6.5L12 12.5L20 6.5" />
+        </svg>
+      );
+  }
+}
 
 export default function HomePage() {
   const socialLinks = getSocialLinks();
@@ -185,30 +222,20 @@ export default function HomePage() {
               {HOME_CONTACT_CTA.description}
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-7 gap-y-2.5">
-              {socialLinks.map((social) =>
-                social.external ? (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border-ink text-ink hover:border-cobalt hover:text-cobalt inline-flex items-center gap-1.5 border-b pb-0.5 text-sm font-medium transition-colors"
-                  >
-                    <span>{social.label}</span>
-                    <ArrowUpRightIcon className="h-3.5 w-3.5" />
-                  </a>
-                ) : (
-                  <Link
-                    key={social.label}
-                    href={social.href}
-                    className="border-ink text-ink hover:border-cobalt hover:text-cobalt inline-flex items-center gap-1.5 border-b pb-0.5 text-sm font-medium transition-colors"
-                  >
-                    <span>{social.label}</span>
-                    <ArrowUpRightIcon className="h-3.5 w-3.5" />
-                  </Link>
-                )
-              )}
+            <div className="flex flex-wrap items-center gap-2.5">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.href}
+                  target={social.external ? "_blank" : undefined}
+                  rel={social.external ? "noopener noreferrer" : undefined}
+                  className="border-ink/40 text-ink hover:border-cobalt hover:text-cobalt group inline-flex items-center gap-2 border bg-transparent px-3.5 py-2 text-xs font-medium tracking-[0.04em] transition-colors"
+                >
+                  <SocialPlatformIcon id={social.id} />
+                  <span>{social.label}</span>
+                  <ArrowUpRightIcon className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -138,6 +138,10 @@ export default function SobrePage() {
             <p className="text-ink text-xl font-semibold tracking-tight sm:text-2xl">
               {ABOUT_EDUCATION.course}
             </p>
+            <p className="text-muted mt-2 inline-flex items-center gap-2 text-sm font-medium">
+              <span className="bg-cobalt inline-block h-1.5 w-1.5 shrink-0" aria-hidden="true" />
+              <span>{ABOUT_EDUCATION.expectedGraduation}</span>
+            </p>
           </div>
         </div>
       </section>
