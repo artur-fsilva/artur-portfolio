@@ -29,7 +29,7 @@ export const PROJECTS_LIST: readonly ProjectItem[] = [
     category: "EXPERIÊNCIA PROFISSIONAL",
     title: "YouSafer Flow",
     description: "Plataforma de processos, formulários, integrações e controle de permissões.",
-    caseStudyReady: false,
+    caseStudyReady: true,
   },
   {
     index: "02",
