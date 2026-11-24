@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AceFinancePreview } from "@/components/home/AceFinancePreview";
 import { HeroMonogram } from "@/components/home/HeroMonogram";
@@ -66,7 +67,19 @@ export default function HomePage() {
               <article key={project.index} className="group flex flex-col">
                 {isFeatured && project.href ? (
                   <Link href={project.href} className="block overflow-hidden">
-                    <AceFinancePreview />
+                    {project.image ? (
+                      <div className="border-rule relative aspect-[16/10] w-full overflow-hidden border bg-white">
+                        <Image
+                          src={project.image.src}
+                          alt={project.image.alt}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                        />
+                      </div>
+                    ) : (
+                      <AceFinancePreview />
+                    )}
                   </Link>
                 ) : (
                   <div

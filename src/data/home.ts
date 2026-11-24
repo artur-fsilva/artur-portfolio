@@ -5,6 +5,10 @@ export interface HomeProjectItem {
   readonly description: string;
   readonly href?: string;
   readonly status: "featured" | "planned";
+  readonly image?: {
+    readonly src: string;
+    readonly alt: string;
+  };
 }
 
 export interface HomeTrajectoryItem {
@@ -33,10 +37,16 @@ export const HOME_PROJECTS: readonly HomeProjectItem[] = [
   },
   {
     index: "02",
-    category: "EM PLANEJAMENTO",
-    title: "Novo Projeto",
-    description: "Em breve, um novo projeto por aqui.",
-    status: "planned",
+    category: "SITE PROFISSIONAL",
+    title: "Site Marina",
+    description:
+      "Site de fisioterapia com foco em experiência do usuário, apresentação de serviços e agendamento.",
+    href: "/trabalhos/site-marina",
+    status: "featured",
+    image: {
+      src: "/images/site-marina/home.png",
+      alt: "Prévia da página inicial do Site Marina Ferreira",
+    },
   },
 ] as const;
 
