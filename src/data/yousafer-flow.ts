@@ -157,6 +157,6 @@ export const YOUSAFER_FLOW_NEXT_CTA = {
   leftHeading: "VER PRÓXIMO PROJETO",
   eyebrow: "/ PRÓXIMO ESTUDO DE CASO",
   nextTitle: "LABORATÓRIO JAVA",
-  nextNote: "Estudo de caso em preparação — acessar galeria de Trabalhos",
-  href: "/trabalhos",
+  nextNote: "Planejamento de estudos práticos em Java, Spring Boot e segurança de aplicações",
+  href: "/trabalhos/laboratorio-java",
 } as const;

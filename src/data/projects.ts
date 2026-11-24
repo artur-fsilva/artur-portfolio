@@ -38,7 +38,7 @@ export const PROJECTS_LIST: readonly ProjectItem[] = [
     category: "EM DESENVOLVIMENTO",
     title: "Laboratório Java",
     description: "Estudos práticos com Java e Spring Boot, focados em boas práticas e segurança.",
-    caseStudyReady: false,
+    caseStudyReady: true,
   },
   {
     index: "03",

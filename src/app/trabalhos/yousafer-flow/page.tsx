@@ -237,7 +237,7 @@ export default function YouSaferFlowCaseStudyPage() {
 
             <Link
               href={YOUSAFER_FLOW_NEXT_CTA.href}
-              aria-label="Laboratório Java em preparação — voltar para a galeria de Trabalhos"
+              aria-label="Ver página do Laboratório Java"
               className="bg-cobalt hover:bg-cobalt-hover flex h-12 w-12 shrink-0 items-center justify-center text-white transition-colors"
             >
               <ArrowUpRightIcon className="h-6 w-6" />
