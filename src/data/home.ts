@@ -43,7 +43,7 @@ export const HOME_PROJECTS: readonly HomeProjectItem[] = [
 export const HOME_TRAJECTORY: readonly HomeTrajectoryItem[] = [
   {
     organization: "YouSafer",
-    role: "Técnico de TI",
+    role: "Desenvolvedor de Sistemas",
     href: "/sobre",
   },
   {

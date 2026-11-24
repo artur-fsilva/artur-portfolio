@@ -45,7 +45,7 @@ export default function LaboratorioJavaPage() {
 
             <h1
               id="lab-java-hero-heading"
-              className="font-display text-ink text-[3.25rem] leading-[0.88] tracking-tight sm:text-[5rem] lg:text-[6rem] xl:text-[6.75rem]"
+              className="font-display text-ink text-[3.25rem] leading-[1.06] tracking-[0.01em] sm:text-[5rem] lg:text-[6rem] xl:text-[6.75rem]"
             >
               {LABORATORIO_JAVA_HERO.title}
               <span

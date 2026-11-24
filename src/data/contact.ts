@@ -16,7 +16,7 @@ export interface AvailabilityItem {
 export const CONTACT_META = {
   title: "Contato — Artur Ferreira Silva",
   description:
-    "Entre em contato com Artur Ferreira Silva para oportunidades de estágio ou júnior, projetos e networking.",
+    "Entre em contato com Artur Ferreira Silva para oportunidades profissionais, projetos freelance e parcerias.",
 } as const;
 
 export const CONTACT_HERO = {

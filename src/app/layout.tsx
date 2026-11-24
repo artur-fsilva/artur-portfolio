@@ -26,9 +26,36 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
+function getMetadataBase(): URL | undefined {
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (configured && configured.startsWith("https://")) {
+    return new URL(configured);
+  }
+
+  const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelUrl) {
+    return new URL(`https://${vercelUrl.replace(/^https?:\/\//, "")}`);
+  }
+
+  return undefined;
+}
+
 export const metadata: Metadata = {
+  metadataBase: getMetadataBase(),
   title: SITE_CONFIG.title,
   description: SITE_CONFIG.description,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    siteName: SITE_CONFIG.ownerName,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+  },
 };
 
 interface RootLayoutProps {
