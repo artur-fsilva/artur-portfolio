@@ -57,6 +57,6 @@ export const PROJECTS_LIST: readonly ProjectItem[] = [
     category: "PRODUTO DIGITAL",
     title: "Ace Finance",
     description: "Dashboard financeiro com IA, assinaturas, autenticação e experiência SaaS.",
-    caseStudyReady: false,
+    caseStudyReady: true,
   },
 ] as const;
