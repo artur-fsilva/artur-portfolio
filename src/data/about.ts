@@ -120,6 +120,6 @@ export const ABOUT_ACTIONS = {
    * Quando a rota `/contato` for implementada (Etapa 8), atualize `contactHref` para `"/contato"`.
    */
   contactLabel: "Entrar em contato",
-  contactHref: null as string | null,
+  contactHref: "/contato" as string | null,
   contactPendingNote: "Página de contato em breve",
 } as const;
