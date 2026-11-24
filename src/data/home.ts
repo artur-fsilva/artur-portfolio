@@ -34,6 +34,10 @@ export const HOME_PROJECTS: readonly HomeProjectItem[] = [
     description: "Dashboard financeiro com IA, assinaturas, autenticação e experiência SaaS.",
     href: "/trabalhos/ace-finance",
     status: "featured",
+    image: {
+      src: "/images/ace-finance/landing.png",
+      alt: "Prévia da landing page do Ace Finance",
+    },
   },
   {
     index: "02",

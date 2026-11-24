@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   brandLabel: "PORTFÓLIO",
   ownerName: "Artur Ferreira Silva",
   copyrightYear: 2026,
-  title: "Artur Ferreira Silva — Portfólio",
+  title: "Artur Ferreira Silva",
   description:
     "Portfólio profissional de Artur Ferreira Silva. Tecnologia aplicada a problemas reais, sistemas e segurança de aplicações.",
 } as const;

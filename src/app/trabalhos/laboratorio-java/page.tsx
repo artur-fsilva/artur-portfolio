@@ -18,7 +18,6 @@ import {
 } from "@/data/laboratorio-java";
 
 export const metadata: Metadata = {
-  title: LABORATORIO_JAVA_META.title,
   description: LABORATORIO_JAVA_META.description,
 };
 

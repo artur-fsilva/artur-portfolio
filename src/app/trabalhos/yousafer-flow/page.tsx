@@ -23,7 +23,6 @@ import {
 } from "@/data/yousafer-flow";
 
 export const metadata: Metadata = {
-  title: YOUSAFER_FLOW_META.title,
   description: YOUSAFER_FLOW_META.description,
 };
 

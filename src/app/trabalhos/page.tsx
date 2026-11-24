@@ -6,7 +6,6 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PROJECTS_HERO, PROJECTS_LIST } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Trabalhos — Artur Ferreira Silva",
   description:
     "Projetos e estudos de caso de Artur Ferreira Silva: YouSafer Flow, Laboratório Java, Site Marina e Ace Finance.",
 };

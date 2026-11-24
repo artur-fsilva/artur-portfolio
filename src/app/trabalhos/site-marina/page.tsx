@@ -23,7 +23,6 @@ import {
 } from "@/data/site-marina";
 
 export const metadata: Metadata = {
-  title: SITE_MARINA_META.title,
   description: SITE_MARINA_META.description,
 };
 
@@ -297,4 +296,3 @@ export default function SiteMarinaCaseStudyPage() {
     </Container>
   );
 }
-

@@ -23,7 +23,6 @@ import {
 } from "@/data/ace-finance";
 
 export const metadata: Metadata = {
-  title: ACE_FINANCE_META.title,
   description: ACE_FINANCE_META.description,
 };
 

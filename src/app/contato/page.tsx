@@ -13,7 +13,6 @@ import {
 } from "@/data/contact";
 
 export const metadata: Metadata = {
-  title: CONTACT_META.title,
   description: CONTACT_META.description,
 };
 
