@@ -32,7 +32,7 @@ export default function AceFinanceCaseStudyPage() {
     <Container>
       {/* Hero */}
       <section aria-labelledby="ace-finance-hero-heading" className="pt-4 pb-12 sm:pt-8 sm:pb-16">
-        <div className="mb-6">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <Link
             href={ACE_FINANCE_HERO.backHref}
             className="text-muted hover:text-cobalt inline-flex items-center gap-2 text-xs font-medium tracking-[0.18em] uppercase transition-colors"
@@ -40,6 +40,16 @@ export default function AceFinanceCaseStudyPage() {
             <ArrowLeftIcon className="h-3.5 w-3.5" />
             <span>{ACE_FINANCE_HERO.backLabel}</span>
           </Link>
+
+          <a
+            href={ACE_FINANCE_HERO.visitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-ink text-ink hover:border-cobalt hover:bg-cobalt inline-flex items-center gap-2 border px-4 py-2 text-xs font-medium tracking-[0.18em] uppercase transition-colors hover:text-white"
+          >
+            <span>{ACE_FINANCE_HERO.visitLabel}</span>
+            <ArrowUpRightIcon className="h-3.5 w-3.5" />
+          </a>
         </div>
 
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-8">
@@ -268,4 +278,3 @@ export default function AceFinanceCaseStudyPage() {
     </Container>
   );
 }
-

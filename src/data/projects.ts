@@ -48,7 +48,7 @@ export const PROJECTS_LIST: readonly ProjectItem[] = [
     title: "Site Marina",
     description:
       "Site institucional com foco em apresentação profissional, experiência do usuário e presença digital.",
-    caseStudyReady: false,
+    caseStudyReady: true,
   },
   {
     index: "04",

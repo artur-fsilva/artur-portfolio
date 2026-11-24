@@ -48,6 +48,8 @@ export const ACE_FINANCE_META = {
 export const ACE_FINANCE_HERO = {
   backHref: "/trabalhos",
   backLabel: "Voltar para Trabalhos",
+  visitUrl: "https://acefinance.com.br/",
+  visitLabel: "Visitar site",
   eyebrow: "ESTUDO DE CASO / PROJETO AUTORAL",
   title: "ACE FINANCE",
   subtitle:
@@ -176,4 +178,3 @@ export const ACE_FINANCE_NEXT_CTA = {
   nextNote: "Site Marina em breve — voltar para a galeria de projetos",
   href: "/trabalhos",
 } as const;
-
