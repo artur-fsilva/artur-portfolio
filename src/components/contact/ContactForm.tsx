@@ -156,10 +156,22 @@ export function ContactForm({ isConfigured }: ContactFormProps) {
           type="submit"
           disabled={!isConfigured || status === "submitting"}
           aria-disabled={!isConfigured || status === "submitting"}
-          className="bg-cobalt hover:bg-cobalt-hover inline-flex min-w-[220px] items-center justify-center gap-3 px-7 py-3.5 text-sm font-medium text-white transition-colors disabled:cursor-not-allowed disabled:opacity-60"
+          className="bg-cobalt hover:bg-cobalt-hover inline-flex min-w-[240px] items-center justify-center gap-3 px-7 py-3.5 text-sm font-medium text-white transition-colors disabled:cursor-not-allowed disabled:opacity-60"
         >
-          <span>{status === "submitting" ? "Enviando..." : "Enviar mensagem"}</span>
-          <ArrowUpRightIcon className="h-4 w-4" />
+          {status === "submitting" ? (
+            <>
+              <span
+                className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/35 border-t-white"
+                aria-hidden="true"
+              />
+              <span>Enviando mensagem...</span>
+            </>
+          ) : (
+            <>
+              <span>Enviar mensagem</span>
+              <ArrowUpRightIcon className="h-4 w-4" />
+            </>
+          )}
         </button>
 
         {!isConfigured ? (
@@ -175,12 +187,72 @@ export function ContactForm({ isConfigured }: ContactFormProps) {
           </p>
         ) : null}
 
-        <div aria-live="polite" className="mt-2 min-h-4">
+        <div aria-live="polite">
           {status === "success" ? (
-            <p className="text-cobalt text-xs font-medium">{feedback}</p>
+            <div role="status" className="border-rule mt-6 border-t pt-5">
+              <div className="flex items-start gap-4">
+                <span
+                  className="bg-cobalt mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-white"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    className="h-3.5 w-3.5"
+                  >
+                    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" />
+                  </svg>
+                </span>
+
+                <div>
+                  <p className="text-ink text-[11px] font-medium tracking-[0.22em] uppercase">
+                    MENSAGEM ENVIADA
+                  </p>
+                  <p className="text-ink mt-1.5 text-lg leading-snug font-bold tracking-tight">
+                    Obrigado pelo contato.
+                  </p>
+                  <p className="text-muted mt-1 text-sm leading-relaxed">
+                    Sua mensagem foi enviada com sucesso. Retornarei assim que possível.
+                  </p>
+                </div>
+              </div>
+            </div>
           ) : null}
+
           {status === "error" ? (
-            <p className="text-xs font-medium text-red-700">{feedback}</p>
+            <div role="alert" className="border-rule mt-6 border-t pt-5">
+              <div className="flex items-start gap-4">
+                <span
+                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center bg-red-700 text-white"
+                  aria-hidden="true"
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="square"
+                    className="h-3.5 w-3.5"
+                  >
+                    <path d="M8 4V8.5" />
+                    <path d="M8 11.5V12" />
+                  </svg>
+                </span>
+
+                <div>
+                  <p className="text-[11px] font-medium tracking-[0.22em] text-red-700 uppercase">
+                    NÃO FOI POSSÍVEL ENVIAR
+                  </p>
+                  <p className="text-ink mt-1.5 text-lg leading-snug font-bold tracking-tight">
+                    Ocorreu um problema no envio.
+                  </p>
+                  <p className="text-muted mt-1 text-sm leading-relaxed">{feedback}</p>
+                </div>
+              </div>
+            </div>
           ) : null}
         </div>
       </div>
