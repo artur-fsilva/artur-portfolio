@@ -1,3 +1,5 @@
+import { RESUME_PDF_PATH } from "@/data/site";
+
 export interface PortraitImageConfig {
   readonly src: string;
   readonly alt: string;
@@ -109,12 +111,8 @@ export const ABOUT_DIRECTION = {
 } as const;
 
 export const ABOUT_ACTIONS = {
-  /**
-   * Quando o PDF real do currículo estiver disponível em `public/documents/`,
-   * atualize `resumeHref` para `"/documents/<nome-do-arquivo>.pdf"`.
-   */
   resumeLabel: "Baixar currículo",
-  resumeHref: null as string | null,
+  resumeHref: RESUME_PDF_PATH as string | null,
   resumePendingNote: "Currículo em PDF em breve",
 
   /**

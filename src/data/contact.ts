@@ -1,9 +1,12 @@
+import { RESUME_PDF_PATH } from "@/data/site";
+
 export interface ContactCardItem {
   readonly id: "linkedin" | "github" | "email" | "whatsapp" | "resume";
   readonly label: string;
   readonly subtitle: string;
   readonly href: string | null;
   readonly external: boolean;
+  readonly download?: boolean;
   readonly pendingNote?: string;
 }
 
@@ -59,10 +62,10 @@ export const CONTACT_CARDS: readonly ContactCardItem[] = [
   {
     id: "resume",
     label: "Currículo",
-    subtitle: "Currículo em PDF (em breve)",
-    href: null,
+    subtitle: "Baixe meu currículo (PDF)",
+    href: RESUME_PDF_PATH,
     external: false,
-    pendingNote: "Currículo em PDF será disponibilizado em breve",
+    download: true,
   },
 ] as const;
 

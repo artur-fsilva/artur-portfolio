@@ -90,11 +90,11 @@ export default function LaboratorioJavaPage() {
           headingId="lab-java-objetivo-heading"
         />
 
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-          <h3 className="font-display text-ink shrink-0 text-4xl leading-[0.9] tracking-tight sm:text-5xl">
+        <div className="flex min-w-0 flex-col gap-5 sm:flex-row sm:items-start">
+          <h3 className="font-display text-ink shrink-0 text-4xl leading-[0.95] tracking-tight sm:text-5xl">
             {LABORATORIO_JAVA_OBJECTIVE.title}
           </h3>
-          <p className="border-rule text-ink/85 max-w-3xl text-sm leading-relaxed sm:border-l sm:pl-6 sm:text-base">
+          <p className="border-rule text-ink/85 max-w-3xl min-w-0 text-sm leading-relaxed sm:border-l sm:pl-6 sm:text-base">
             {LABORATORIO_JAVA_OBJECTIVE.description}
           </p>
         </div>

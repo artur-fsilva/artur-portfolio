@@ -195,6 +195,7 @@ export function ContactCard({ card }: ContactCardProps) {
   return (
     <a
       href={card.href}
+      download={card.download ? true : undefined}
       target={card.external ? "_blank" : undefined}
       rel={card.external ? "noopener noreferrer" : undefined}
       className="group relative flex w-full items-center overflow-hidden transition-opacity hover:opacity-95"

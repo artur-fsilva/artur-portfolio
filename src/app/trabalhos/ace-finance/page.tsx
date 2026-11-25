@@ -152,13 +152,13 @@ export default function AceFinanceCaseStudyPage() {
       <section aria-label="Atuação, desafios e soluções" className="pb-12 sm:pb-16">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8">
           {ACE_FINANCE_NARRATIVE.map((block) => (
-            <div key={block.index} className="flex flex-col">
+            <div key={block.index} className="flex min-w-0 flex-col">
               <SectionHeader title={block.eyebrow} count={block.index} />
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                <h3 className="font-display text-ink shrink-0 text-3xl leading-[0.92] tracking-tight sm:text-4xl">
+              <div className="flex min-w-0 flex-col gap-3">
+                <h3 className="font-display text-ink text-3xl leading-[1.02] tracking-[0.01em] xl:text-4xl">
                   {block.title}
                 </h3>
-                <p className="border-rule text-ink/85 text-sm leading-relaxed sm:border-l sm:pl-4">
+                <p className="border-rule text-ink/85 min-w-0 border-l pl-4 text-sm leading-relaxed">
                   {block.description}
                 </p>
               </div>

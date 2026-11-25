@@ -10,6 +10,8 @@ export interface SocialLink {
   readonly external: boolean;
 }
 
+export const RESUME_PDF_PATH = "/documents/artur-ferreira-silva-curriculo.pdf" as const;
+
 export const SITE_CONFIG = {
   brandShort: "AF",
   brandLabel: "PORTFÓLIO",
